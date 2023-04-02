@@ -4,5 +4,6 @@ FROM jiuyoung/texlive:latest
 COPY fonts/* /usr/share/fonts/
 # 刷新字体缓存
 RUN fc-cache -fv
+RUN tlmgr init-usertree
 # 设置 texlive 的镜像地址
-RUN sudo tlmgr option repository https://mirrors.aliyun.com/CTAN/systems/texlive/tlnet
+RUN tlmgr option repository https://mirrors.aliyun.com/CTAN/systems/texlive/tlnet
